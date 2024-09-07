@@ -1,3 +1,17 @@
+/*
+Moving Average Filter:
+
+A moving average filter is applied to each flex sensor value. This filter smooths the readings by averaging the values over the last filterWindowSize samples, reducing the impact of noise.
+Filter Variables:
+
+filterWindowSize: Defines the number of samples over which the average is calculated. Adjust this value to balance between responsiveness and noise reduction.
+filterValues: An array to store the recent readings for each sensor.
+filterIndex: Keeps track of the current position in the circular buffer.
+Tips for Further Optimization:
+Adjust filterWindowSize: Start with a smaller window size (e.g., 3) and increase it if more smoothing is needed. Larger sizes make the system less responsive but more stable.
+Test with Actual Gestures: Calibrate the code with real gestures and fine-tune the tolerance and gestureDurationThreshold based on the results.
+Exponential Moving Average (EMA): For a smoother response that reacts faster to changes, consider using EMA. It gives more weight to recent values while still smoothing out the data.
+*/
 #include <WiFi.h>
 #include <Audio.h>
 
